@@ -1,0 +1,26 @@
+<form>
+  <div class="form-group">
+    <label>Name</label>
+    <input type="name" #name class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" #password class="form-control">
+  </div>
+  <button type="submit" (click)="Login(name,password)">Login</button>
+</form>
+<div class="jumbotron">
+  <h1>Login Page</h1>
+  <div>
+      <h4>Admin</h4>
+      <span>Name : admin</span>
+      <br>
+      <span>password : admin</span>
+  </div>
+   <div>
+     <h4>user</h4>
+     <span>Name : user</span>
+     <br>
+     <span>password : user</span>
+   </div>
+</div>

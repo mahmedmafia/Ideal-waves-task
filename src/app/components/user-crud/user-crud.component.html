@@ -1,0 +1,13 @@
+
+<form name="form" (ngSubmit)="f.form.valid && submit(name.value,age.value)" #f="ngForm" *ngIf="isAdmin">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" [ngModel] name="name" #name="ngModel" required class="form-control">
+  </div>
+  <div>
+    <label>age</label>
+    <input type="number" [ngModel] name="age" #age="ngModel" required class="form-control">
+  </div>
+  <button tpye="submit" [disabled]="!f.form.valid">Submit</button>
+</form>
+<app-user-list></app-user-list>

@@ -1,0 +1,24 @@
+<li class="list-group-item" *ngIf="!update">
+  <p>Name:
+    <span>{{user.name}}</span>
+  </p>
+  <p>Age :{{user.age}}</p>
+  <div class="pull-right" *ngIf="admin">
+    <button (click)="deleteUser(user.id)" class="btn btn-danger">delete</button>
+    <button (click)="update=true" class="btn btn-default">update</button>
+  </div>
+</li>
+<li class="list-group-item" *ngIf="update">
+  <form (ngSubmit)="updateUser(user.id,user)" #f="ngForm">
+    <p>Name:
+      <input type="text" [(ngModel)]="user.name" #name="ngModel" name="name">
+    </p>
+    <p>age:
+      <input type="number" [(ngModel)]="user.age" #age="ngModel" name="age">
+    </p>
+    <div class="pull-left">
+    <button class="btn btn-primary">update</button>
+    <button (click)="update=false" class="btn btn-default">Cancel</button>
+    </div>
+  </form>
+</li>

@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li routerLinkActive="active" class="nav-item" *ngIf="!isLogged">
+            <a class="nav-link" [routerLink]="['auth']">Login</a>
+        </li>
+        <li routerLinkActive="active" class="nav-item" *ngIf="isLogged" (click)="Logout()">
+          <a class="nav-link" [routerLink]="['auth']">Logout</a>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+          <a class="nav-link" [routerLink]="['users']">users</a>
+        </li>
+    </ul>
+    <div class="pull-right" style="float:right">
+       <ng-container *ngIf="isLogged">
+            Hello {{LoggedUser.name}}
+       </ng-container>
+       
+    </div>
+  </div>
+</nav>
